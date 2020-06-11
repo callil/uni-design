@@ -1,6 +1,6 @@
 {
   "name": "@callil/uni-react",
-  "version": "1.2.3-alpha.0",
+  "version": "1.2.4-alpha.0",
   "description": "Uniswap's design language",
   "author": "callil",
   "license": "MIT",
@@ -28,20 +28,20 @@
   "peerDependencies": {
     "@reach/disclosure": "^0.10.2",
     "@reach/menu-button": "^0.1.18",
+    "@styled-system/css": "^5.1.5",
+    "formik": ">=2",
     "prop-types": "^15.5.4",
     "react": ">= 16",
+    "react-codemirror2": ">= 7.1.0",
     "react-dom": ">= 16",
     "styled-components": ">= 4",
-    "styled-system": ">=5",
-    "formik": ">=2",
-    "react-codemirror2": ">= 7.1.0",
-    "@styled-system/css": "^5.1.5"
+    "styled-system": ">=5"
   },
   "devDependencies": {
+    "@callil/uni-tokens": "^1.2.4-alpha.0",
     "@reach/disclosure": "^0.10.2",
     "@reach/menu-button": "^0.10.2",
     "@styled-system/css": "^5.1.5",
-    "@callil/uni-tokens": "1.2.3-alpha.0",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^4.4.2",
