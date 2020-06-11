@@ -8,7 +8,7 @@
   "module": "dist/uni-tokens.esm.js",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/callil/uni-design.git",
+    "url": "git+ssh://git@github.com/callil/uni-design.git",
     "directory": "callil/uni-design"
   },
   "publishConfig": {
@@ -32,6 +32,14 @@
   "peerDependencies": {
     "styled-components": ">= 4"
   },
+  "devDependencies": {
+    "@types/styled-components": "^4.4.3",
+    "husky": "^4.2.2",
+    "styled-components": "^5.0.1",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -43,5 +51,8 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "gitHead": "a5834dd50a6e5be19fd4b29ec713eab77306e813"
+  "bugs": {
+    "url": "https://github.com/callil/uni-design/issues"
+  },
+  "homepage": "https://github.com/callil/uni-design#readme"
 }

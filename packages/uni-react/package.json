@@ -26,9 +26,42 @@
     "lint": "tsdx lint --fix"
   },
   "peerDependencies": {
+    "@reach/disclosure": "^0.10.2",
+    "@reach/menu-button": "^0.1.18",
+    "prop-types": "^15.5.4",
     "react": ">= 16",
     "react-dom": ">= 16",
-    "styled-components": ">= 4"
+    "styled-components": ">= 4",
+    "styled-system": ">=5",
+    "formik": ">=2",
+    "react-codemirror2": ">= 7.1.0",
+    "@styled-system/css": "^5.1.5"
+  },
+  "devDependencies": {
+    "@reach/disclosure": "^0.10.2",
+    "@reach/menu-button": "^0.10.2",
+    "@styled-system/css": "^5.1.5",
+    "@callil/uni-tokens": "1.2.3-alpha.0",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^4.4.2",
+    "@types/styled-system": "^5.1.4",
+    "@types/styled-system__css": "^5.0.5",
+    "@types/yup": "^0.26.30",
+    "codemirror": "^5.52.2",
+    "eslint": "^6.8.0",
+    "formik": "^2.1.4",
+    "markdown-to-jsx": "^6.11.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-codemirror2": "^7.1.0",
+    "react-dom": "^16.13.0",
+    "react-markdown": "^4.3.1",
+    "styled-components": "^5.1.1",
+    "styled-system": "^5.1.4",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
   },
   "gitHead": "a5834dd50a6e5be19fd4b29ec713eab77306e813"
 }
