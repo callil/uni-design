@@ -1,6 +1,6 @@
 {
   "name": "@callil/uni-react",
-  "version": "1.2.4-alpha.0",
+  "version": "1.2.5-alpha.0",
   "description": "Uniswap's design language",
   "author": "callil",
   "license": "MIT",
@@ -38,7 +38,7 @@
     "styled-system": ">=5"
   },
   "devDependencies": {
-    "@callil/uni-tokens": "^1.2.4-alpha.0",
+    "@callil/uni-tokens": "^1.2.5-alpha.0",
     "@reach/disclosure": "^0.10.2",
     "@reach/menu-button": "^0.10.2",
     "@styled-system/css": "^5.1.5",
