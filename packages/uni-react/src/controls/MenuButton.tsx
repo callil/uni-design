@@ -1,20 +1,20 @@
-import styled from 'styled-components'
-import { MenuButton as _MenuButton, MenuButtonProps } from '@reach/menu-button'
-import { space, SpaceProps, typography, TypographyProps } from 'styled-system'
-import { Theme } from '@callil/uni-tokens'
+import styled from 'styled-components';
+import { MenuButton as _MenuButton, MenuButtonProps } from '@reach/menu-button';
+import { space, SpaceProps, typography, TypographyProps } from 'styled-system';
+import { Theme } from '@callil/uni-tokens';
 
 type Props = MenuButtonProps &
   SpaceProps &
   TypographyProps & {
-    sm: boolean
-    wide: boolean
-    narrow: boolean
-    border: boolean
-    caution: boolean
-    primary: boolean
-  }
+    sm: boolean;
+    wide: boolean;
+    narrow: boolean;
+    border: boolean;
+    caution: boolean;
+    primary: boolean;
+  };
 
-type BoxInput = Props & { theme: Theme }
+type BoxInput = Props & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
     border-color: ${p.theme.colors.white};
@@ -48,40 +48,40 @@ const defaultBox = (p: BoxInput) => `
         fill: ${p.theme.colors.white};
       }
     }
-  `
+  `;
 
 const cautionBox = (p: BoxInput) => `
     border-color: ${p.theme.colors.white};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.caution};
+    color: ${p.theme.colors.yellow1};
     * {
-      fill: ${p.theme.colors.caution};
+      fill: ${p.theme.colors.yellow1};
     }
 
     &:hover {
       border-color: ${p.theme.colors.red0};
       background-color: ${p.theme.colors.red0};
       * {
-        fill: ${p.theme.colors.caution};
+        fill: ${p.theme.colors.yellow1};
       }
     }
 
     &:focus {
-      border-color: ${p.theme.colors.caution};
+      border-color: ${p.theme.colors.yellow1};
       * {
-        fill: ${p.theme.colors.caution};
+        fill: ${p.theme.colors.yellow1};
       }
     }
 
     &:active {
-      border-color: ${p.theme.colors.caution};
-      background-color: ${p.theme.colors.caution};
+      border-color: ${p.theme.colors.yellow1};
+      background-color: ${p.theme.colors.yellow1};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
       }
     }
-  `
+  `;
 
 const disabledBox = (p: BoxInput) => `
     &:disabled {
@@ -90,7 +90,7 @@ const disabledBox = (p: BoxInput) => `
       background-color: ${p.theme.colors.gray0};
       color: ${p.theme.colors.gray5};
     }
-  `
+  `;
 
 // Bordered
 
@@ -125,37 +125,37 @@ const defaultBoxBordered = (p: BoxInput) => `
         fill: ${p.theme.colors.white};
       }
     }
-  `
+  `;
 
 const cautionBoxBordered = (p: BoxInput) => `
-    border-color: ${p.theme.colors.caution};
+    border-color: ${p.theme.colors.yellow1};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.caution};
+    color: ${p.theme.colors.yellow1};
     * {
-      fill: ${p.theme.colors.caution};
+      fill: ${p.theme.colors.yellow1};
     }
 
     &:hover {
       background-color: ${p.theme.colors.red0};
       * {
-        fill: ${p.theme.colors.caution};
+        fill: ${p.theme.colors.yellow1};
       }
     }
 
     &:focus {
       * {
-        fill: ${p.theme.colors.caution};
+        fill: ${p.theme.colors.yellow1};
       }
     }
 
     &:active {
-      background-color: ${p.theme.colors.caution};
+      background-color: ${p.theme.colors.yellow1};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
       }
     }
-  `
+  `;
 
 const disabledBoxBordered = (p: BoxInput) => `
     &:disabled {
@@ -164,10 +164,10 @@ const disabledBoxBordered = (p: BoxInput) => `
       background-color: ${p.theme.colors.gray0};
       color: ${p.theme.colors.gray5};
     }
-  `
+  `;
 
 const MenuButton = styled(_MenuButton)<Props>`
-    box-style: border
+    box-style: border;
     border: 0;
     outline: none;
     cursor: pointer;
@@ -180,38 +180,38 @@ const MenuButton = styled(_MenuButton)<Props>`
     vertical-align: middle;
     line-height: 1.2;
 
-    min-width: ${(p) => (p.narrow ? 0 : p.theme.sizes[10])}px;
+    min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
 
-    width: ${(p) => (p.wide ? '100%' : 'auto')};
+    width: ${p => (p.wide ? '100%' : 'auto')};
 
-    padding: ${(p) => {
-      if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`
-      return `${p.theme.space[2]}px ${p.theme.space[3]}px`
+    padding: ${p => {
+      if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
+      return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
     }};
 
-    border-radius: ${(p) => p.theme.radii[2]}px;
+    border-radius: ${p => p.theme.radii[2]}px;
     border-width: 1px;
     border-style: solid;
 
-    border-color: ${(p) => (p.border ? p.theme.gray1 : p.theme.white)};
-    background-color: ${(p) => p.theme.white};
-    color: ${(p) => p.theme.black};
+    border-color: ${p => (p.border ? p.theme.gray1 : p.theme.white)};
+    background-color: ${p => p.theme.white};
+    color: ${p => p.theme.black};
 
-    ${(p) => {
+    ${p => {
       if (p.border) {
-        if (p.disabled) return disabledBoxBordered(p)
-        if (p.caution) return cautionBoxBordered(p)
-        return defaultBoxBordered(p)
+        if (p.disabled) return disabledBoxBordered(p);
+        if (p.caution) return cautionBoxBordered(p);
+        return defaultBoxBordered(p);
       } else {
-        if (p.disabled) return disabledBox(p)
-        if (p.caution) return cautionBox(p)
-        return defaultBox(p)
+        if (p.disabled) return disabledBox(p);
+        if (p.caution) return cautionBox(p);
+        return defaultBox(p);
       }
     }}
 
     ${space}
     ${typography}
-  `
+  `;
 
 MenuButton.defaultProps = {
   fontSize: 2,
@@ -221,6 +221,6 @@ MenuButton.defaultProps = {
   border: false,
   caution: false,
   primary: false,
-}
+};
 
-export default MenuButton
+export default MenuButton;

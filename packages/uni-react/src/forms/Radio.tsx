@@ -1,31 +1,31 @@
-import * as React from 'react'
-import { LayoutProps, SpaceProps } from 'styled-system'
-import styled from 'styled-components'
-import { useField } from 'formik'
-import { Theme } from '@callil/uni-tokens'
+import * as React from 'react';
+import { LayoutProps, SpaceProps } from 'styled-system';
+import styled from 'styled-components';
+import { useField } from 'formik';
+import { Theme } from '@callil/uni-tokens';
 
-import InputLabel from './InputLabel'
-import InputCaption from './InputCaption'
-import ErrorMessage from './ErrorMessage'
+import InputLabel from './InputLabel';
+import InputCaption from './InputCaption';
+import ErrorMessage from './ErrorMessage';
 
-import { Box, Icon } from '../core/index'
+import { Box, Icon } from '../core/index';
 
 type Props = LayoutProps &
   SpaceProps & {
-    caption?: string
-    label: string
-    name: string
-    id: string
-    disabled?: boolean
-  }
+    caption?: string;
+    label: string;
+    name: string;
+    id: string;
+    disabled?: boolean;
+  };
 
 type InternalProps = {
-  checked?: boolean
-  disabled?: boolean
-  hasError?: boolean
-}
+  checked?: boolean;
+  disabled?: boolean;
+  hasError?: boolean;
+};
 
-type BoxInput = InternalProps & { theme: Theme }
+type BoxInput = InternalProps & { theme: Theme };
 
 const offBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.gray2};
@@ -41,7 +41,7 @@ const offBox = (p: BoxInput) => `
   ${HiddenInput}:focus ~ & {
     border-color: ${p.theme.colors.primary};
   }
-`
+`;
 
 const onBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.primary};
@@ -49,34 +49,34 @@ const onBox = (p: BoxInput) => `
   * {
     fill:  ${p.theme.colors.white};
   }
-`
+`;
 
 const offBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.yellow1};
   background-color: ${p.theme.colors.red0};
   * {
     fill:  ${p.theme.colors.white};
   }
 
   &:hover {
-    border-color: ${p.theme.colors.caution};
+    border-color: ${p.theme.colors.yellow1};
   }
 
   ${HiddenInput}:focus ~ & {
     background-color: ${p.theme.colors.white};
     * {
-      fill:  ${p.theme.colors.caution};
+      fill:  ${p.theme.colors.yellow1};
     }
   }
-`
+`;
 
 const onBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.yellow1};
+  background-color: ${p.theme.colors.yellow1};
   * {
     fill:  ${p.theme.colors.white};
   }
-`
+`;
 
 const disabledBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.gray2};
@@ -84,7 +84,7 @@ const disabledBox = (p: BoxInput) => `
   * {
     fill:  ${p.theme.colors.gray5};
   }
-`
+`;
 
 // Hide this input completely
 const HiddenInput = styled.input`
@@ -93,36 +93,36 @@ const HiddenInput = styled.input`
   height: 0;
   width: 0;
   margin: 0px;
-`
+`;
 
 const Label = styled.label<InternalProps>`
   display: block;
   position: relative;
   padding: 0px;
   padding-left: 24px;
-  cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')}};
-`
+  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
+`;
 
 const Indicator = styled.div<InternalProps>`
   position: absolute;
-  top: ${(p) => (p.theme.fontSizes[2] - 12) / 2}px;
+  top: ${p => (p.theme.fontSizes[2] - 12) / 2}px;
   left: 0px;
   height: 16px;
   width: 16px;
   border-radius: 50%;
   border-width: 1px;
   border-style: solid;
-  ${(p) => {
-    if (p.disabled) return disabledBox(p)
-    if (p.checked) return onBox(p)
-    if (p.hasError && !p.checked) return offBoxCaution(p)
-    if (p.hasError && p.checked) return onBoxCaution(p)
-    return offBox(p)
+  ${p => {
+    if (p.disabled) return disabledBox(p);
+    if (p.checked) return onBox(p);
+    if (p.hasError && !p.checked) return offBoxCaution(p);
+    if (p.hasError && p.checked) return onBoxCaution(p);
+    return offBox(p);
   }};
-`
+`;
 
 const Radio = ({ label, caption, name, id, disabled, ...props }: Props) => {
-  const [field, meta] = useField({ name, id, value: id, type: 'radio' })
+  const [field, meta] = useField({ name, id, value: id, type: 'radio' });
   return (
     <Box {...props}>
       <Label disabled={disabled} htmlFor={id} {...props}>
@@ -156,7 +156,7 @@ const Radio = ({ label, caption, name, id, disabled, ...props }: Props) => {
         </ErrorMessage>
       </Label>
     </Box>
-  )
-}
+  );
+};
 
-export default Radio
+export default Radio;
